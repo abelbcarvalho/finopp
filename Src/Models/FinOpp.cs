@@ -1,4 +1,5 @@
 using System.Numerics;
+using EnumFinType;
 
 namespace ModelFinOpp
 {
@@ -6,7 +7,7 @@ namespace ModelFinOpp
     {
         public BigInteger Id { set; get; }
         public string category { set; get; } = "";
-        public string typeOpp { set; get; } = "";
+        public FinTypeEnum typeOpp { set; get; } = FinTypeEnum.UNKNOWN;
         public decimal finMoney { set; get; }
         public BigInteger userId { set; get; }
         public DateTime CreateAt { set; get; }
