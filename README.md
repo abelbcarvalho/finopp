@@ -19,3 +19,6 @@ This application has the objective to help our users to controll their money. Ba
 ### Use Cases
 
 ### Database
+This project uses database provide by [PostgreSQL](https://www.postgresql.org/). It's available a document `.sql` with the table's configuration [here](/fin_opp.sql).
+
+That's all folks!
