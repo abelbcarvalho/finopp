@@ -8,6 +8,7 @@ create table if not exists Users
 	username varchar(128) unique not null,
 	email varchar(255) unique,
 	passwd varchar(512) not null,
+	active boolean not null default true,
 	createAt timestamp not null,
 	updateAt timestamp
 );
@@ -22,6 +23,7 @@ create table if not exists FinOpp
 	category varchar(64) not null,
 	typeOpp varchar(10) not null,
 	finMoney decimal(10, 2) not null,
+	active boolean not null default true,
 	createAt timestamp not null,
 	updateAt timestamp
 );
