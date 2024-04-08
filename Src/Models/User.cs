@@ -1,8 +1,8 @@
 using System.Numerics;
 
-namespace ModelUsers
+namespace ModelUser
 {
-    public class Users
+    public class User
     {
         public BigInteger Id { set; get; }
         public string Name { set; get; } = "";

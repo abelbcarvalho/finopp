@@ -1,15 +1,15 @@
 using System.Numerics;
-using ModelUsers;
+using ModelUser;
 using UserLoginDTO;
 
 namespace IServiceUsers
 {
     public interface IUserService
     {
-        abstract void CreateUser(Users user);
-        abstract Users MakeLogin(DTOUserLogin userLogin);
-        abstract Users RecoveryAccess(Users user);
+        abstract void CreateUser(User user);
+        abstract User MakeLogin(DTOUserLogin userLogin);
+        abstract User RecoveryAccess(User user);
         abstract void DisableUser(BigInteger id);
-        abstract void EnableUser(Users user);
+        abstract void EnableUser(User user);
     }
 }
