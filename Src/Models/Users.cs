@@ -11,6 +11,7 @@ namespace ModelUsers
         public string Username { set; get; } = "";
         public string? Email { set; get; }
         public string Password { set; get; } = "";
+        public bool Active { set; get; } = true;
         public DateTime CreateAt { set; get; }
         public DateTime? UpdateAt { set; get; }
     }
