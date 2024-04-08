@@ -6,6 +6,7 @@ An app about finances.
 * [Resume](#resume)
 * [Dependencies](#dependencies)
 * [Models](#models)
+    * [Enum FinType](#enumearate-fintypeenum)
 * [Use Cases](#use-cases)
 * [Database](#database)
 
@@ -38,6 +39,42 @@ dotnet add package dotnet.net
 ```
 
 ### Models
+This is the tables of 2 entities of that project.
+
+| **Users** | **Data Type** |
+|-----------|---------------|
+| ID        | BigInteger    |
+| Name      | String        |
+| DateBorn  | Date          |
+| CPF       | String        |
+| Username  | String        |
+| *Email?*  | String        |
+| Password  | String        |
+| CreateAt  | DateTime      |
+| *UpdateAt?* | Datetime    |
+
+For each `User`, many others `FinOpp's`.
+
+| **FinOpp** | **Data Type** |
+|-----------|---------------|
+| ID        | BigInteger    |
+| UserId    | BigInteger(FK)|
+| Category  | String        |
+| TypeOpp   | FinTypeEnum*  |
+| FinMoney  | Decimal       |
+| CreateAt  | DateTime      |
+| *UpdateAt?* | Datetime    |
+
+#### Enumearate FinTypeEnum
+This is a part of FinOpp table describe here.
+
+```json
+{
+    "UNKNOWN",
+    "INCOME",
+    "EXPRESS"
+}
+```
 
 ### Use Cases
 
