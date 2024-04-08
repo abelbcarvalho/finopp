@@ -18,7 +18,24 @@ This application has the objective to help our users to controll their money. Ba
 * Active or Deactive an order;
 * Get a balance from a time range;
 
+> **This application is built in C# (Csharp) programming language.**
+
 ### Dependencies
+
+This is about the dependencies of the project. We have to install:
+
+1. Npgsql - postgresql package for C#;
+2. DotNet.Net - Load enviroment variables in C#;
+
+To install that packages:
+
+```commandline
+dotnet add package npgsql
+```
+
+```commandline
+dotnet add package dotnet.net
+```
 
 ### Models
 
