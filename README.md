@@ -78,6 +78,8 @@ This is a part of FinOpp table describe here.
 
 ### Use Cases
 
+> [TODO]
+
 ### Database
 This project uses database provide by [PostgreSQL](https://www.postgresql.org/). It's available a document `.sql` with the table's configuration [here](/fin_opp.sql).
 
