@@ -13,5 +13,7 @@ namespace IPersistFinOpp
         abstract List<FinOpp> FindByMoneyRange(decimal moneyFirst, decimal moneyLast, bool finish, BigInteger userId);
         abstract List<FinOpp> FindByCategory(string category, bool finish, BigInteger userId);
         abstract List<FinOpp> FindByFinType(FinTypeEnum finTypeEnum, bool finish, BigInteger userId);
+        abstract void UpdateFinOpp(FinOpp finOpp);
+        abstract void FinishFinOpp(BigInteger id);
     }
 }
