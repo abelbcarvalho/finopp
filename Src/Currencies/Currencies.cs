@@ -54,6 +54,16 @@ namespace Currencies
 
             this.currencyQuery.Description = "Euro to Real";
 
+            using var httpClient = new HttpClient();
+
+            var response = await httpClient.GetAsync(currency);
+
+            this.BuildResponse(
+                response,
+                "EURBRL",
+                "error: problem to get the value of euro in real"
+            );
+
             return this.currencyQuery;
         }
 
