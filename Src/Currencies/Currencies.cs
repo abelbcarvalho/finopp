@@ -20,20 +20,11 @@ namespace Currencies
 
             var response = await httpClient.GetAsync(currency);
 
-            if (response.IsSuccessStatusCode)
-            {
-                var btcBrl = await response.Content.ReadAsStringAsync();
-
-                Dictionary<string, Dictionary<string, object>> jsonCurrency = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, object>>>(btcBrl) ?? new();
-
-                var value = jsonCurrency["BTCBRL"]["bid"];
-
-                this.currencyQuery.Value = Convert.ToDecimal(value);
-            }
-            else
-            {
-                throw new CurrencyException("error: problem to get the value of bitcoin in real");
-            }
+            this.BuildResponse(
+                response,
+                "BTCBRL",
+                "error: problem to get the value of bitcoin in real"
+            );
 
             return this.currencyQuery;
         }
