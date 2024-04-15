@@ -35,6 +35,16 @@ namespace Currencies
 
             this.currencyQuery.Description = "Dollar to Real";
 
+            using var httpClient = new HttpClient();
+
+            var response = await httpClient.GetAsync(currency);
+
+            this.BuildResponse(
+                response,
+                "USDBRL",
+                "error: problem to get the value of dollar in real"
+            );
+
             return this.currencyQuery;
         }
 
