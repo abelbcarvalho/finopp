@@ -4,11 +4,11 @@ namespace ICurrencies
 {
     public interface IFinanceCurrency
     {
-        abstract DTOCurrency DollarToReal(decimal dollar);
-        abstract DTOCurrency RealToDollar(decimal real);
-        abstract DTOCurrency EuroToReal(decimal euro);
-        abstract DTOCurrency RealToEuro(decimal real);
-        abstract Task<DTOCurrency> BitcoinToReal(decimal bitcoin);
-        abstract DTOCurrency RealToBitcoin(decimal real);
+        abstract Task<DTOCurrency> DollarToReal();
+        abstract Task<DTOCurrency> RealToDollar();
+        abstract Task<DTOCurrency> EuroToReal();
+        abstract Task<DTOCurrency> RealToEuro();
+        abstract Task<DTOCurrency> BitcoinToReal();
+        abstract Task<DTOCurrency> RealToBitcoin();
     }
 }

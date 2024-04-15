@@ -10,7 +10,7 @@ namespace Currencies
         private readonly string apiUrl = "http://economia.awesomeapi.com.br/json/last";
         private readonly DTOCurrency currencyQuery = new();
 
-        public async Task<DTOCurrency> BitcoinToReal(decimal bitcoin)
+        public async Task<DTOCurrency> BitcoinToReal()
         {
             string currency = this.JoinCurrenciesToUrl("BTC-BRL");
 
@@ -38,49 +38,49 @@ namespace Currencies
             return this.currencyQuery;
         }
 
-        public DTOCurrency DollarToReal(decimal dollar)
+        public async Task<DTOCurrency> DollarToReal()
         {
             string currency = this.JoinCurrenciesToUrl("USD-BRL");
 
             this.currencyQuery.Description = "Dollar to Real";
 
-            throw new NotImplementedException();
+            return this.currencyQuery;
         }
 
-        public DTOCurrency EuroToReal(decimal euro)
+        public async Task<DTOCurrency> EuroToReal()
         {
             string currency = this.JoinCurrenciesToUrl("EUR-BRL");
 
             this.currencyQuery.Description = "Euro to Real";
 
-            throw new NotImplementedException();
+            return this.currencyQuery;
         }
 
-        public DTOCurrency RealToBitcoin(decimal real)
+        public async Task<DTOCurrency> RealToBitcoin()
         {
             string currency = this.JoinCurrenciesToUrl("BRL-BTC");
 
             this.currencyQuery.Description = "Real to Bitcoin";
 
-            throw new NotImplementedException();
+            return this.currencyQuery;
         }
 
-        public DTOCurrency RealToDollar(decimal real)
+        public async Task<DTOCurrency> RealToDollar()
         {
             string currency = this.JoinCurrenciesToUrl("BRL-USD");
 
             this.currencyQuery.Description = "Real to Dollar";
 
-            throw new NotImplementedException();
+            return this.currencyQuery;
         }
 
-        public DTOCurrency RealToEuro(decimal real)
+        public async Task<DTOCurrency> RealToEuro()
         {
             string currency = this.JoinCurrenciesToUrl("BRL-EUR");
 
             this.currencyQuery.Description = "Real to Euro";
 
-            throw new NotImplementedException();
+            return this.currencyQuery;
         }
 
         protected string JoinCurrenciesToUrl(string currencies)
