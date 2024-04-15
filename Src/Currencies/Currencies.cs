@@ -87,5 +87,23 @@ namespace Currencies
         {
             return $"{this.apiUrl}/{currencies}";
         }
+
+        protected async void BuildResponse(HttpResponseMessage? response, string currency, string exceptMsg)
+        {
+            if (response is not null && response.IsSuccessStatusCode)
+            {
+                var jsonResponse = await response.Content.ReadAsStringAsync();
+
+                Dictionary<string, Dictionary<string, object>> jsonCurrency = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, object>>>(jsonResponse) ?? new();
+
+                var value = jsonCurrency[currency]["bid"];
+
+                this.currencyQuery.Value = Convert.ToDecimal(value);
+            }
+            else
+            {
+                throw new CurrencyException(exceptMsg);
+            }
+        }
     }
 }
