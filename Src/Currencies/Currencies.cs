@@ -67,15 +67,6 @@ namespace Currencies
             return this.currencyQuery;
         }
 
-        public async Task<DTOCurrency> RealToBitcoin()
-        {
-            string currency = this.JoinCurrenciesToUrl("BRL-BTC");
-
-            this.currencyQuery.Description = "Real to Bitcoin";
-
-            return this.currencyQuery;
-        }
-
         public async Task<DTOCurrency> RealToDollar()
         {
             string currency = this.JoinCurrenciesToUrl("BRL-USD");

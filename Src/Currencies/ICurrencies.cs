@@ -9,6 +9,5 @@ namespace ICurrencies
         abstract Task<DTOCurrency> EuroToReal();
         abstract Task<DTOCurrency> RealToEuro();
         abstract Task<DTOCurrency> BitcoinToReal();
-        abstract Task<DTOCurrency> RealToBitcoin();
     }
 }
