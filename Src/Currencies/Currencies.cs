@@ -80,7 +80,7 @@ namespace Currencies
             this.BuildResponse(
                 response,
                 "BRLUSD",
-                "error: problem to get the value of bitcoin in real"
+                "error: problem to get the value of real in dollar"
             );
 
             return this.currencyQuery;
@@ -99,7 +99,7 @@ namespace Currencies
             this.BuildResponse(
                 response,
                 "BRLEUR",
-                "error: problem to get the value of bitcoin in real"
+                "error: problem to get the value of real in euro"
             );
 
             return this.currencyQuery;
