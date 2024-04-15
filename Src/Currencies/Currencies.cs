@@ -92,6 +92,16 @@ namespace Currencies
 
             this.currencyQuery.Description = "Real to Euro";
 
+            using var httpClient = new HttpClient();
+
+            var response = await httpClient.GetAsync(currency);
+
+            this.BuildResponse(
+                response,
+                "BRLEUR",
+                "error: problem to get the value of bitcoin in real"
+            );
+
             return this.currencyQuery;
         }
 
