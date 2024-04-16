@@ -2,6 +2,7 @@ using System.Text.Json;
 using CurrencyDTO;
 using ExceptionCurrency;
 using ICurrencies;
+using UtilStringToDec;
 
 namespace Currencies
 {
@@ -120,7 +121,7 @@ namespace Currencies
 
                 var value = jsonCurrency[currency]["bid"];
 
-                this.currencyQuery.Value = Convert.ToDecimal(value);
+                this.currencyQuery.Value = StringToDecUtil.StringToDecimal(value.ToString());
             }
             else
             {
