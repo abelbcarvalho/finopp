@@ -2,7 +2,7 @@ using System.Numerics;
 using ModelUser;
 using UserLoginDTO;
 
-namespace IServiceUsers
+namespace IServiceUser
 {
     public interface IUserService
     {
