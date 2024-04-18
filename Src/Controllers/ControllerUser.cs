@@ -1,35 +1,38 @@
 using System.Numerics;
 using IControllerUsers;
 using ModelUser;
+using ServiceUser;
 using UserLoginDTO;
 
 namespace ControllerUser
 {
     public class UserController : IUserController
     {
-        public async void CreateUser(User user)
+        private readonly UserService serviceUser = new();
+        
+        public async Task CreateUser(User user)
         {
-            throw new NotImplementedException();
+            await this.serviceUser.CreateUser(user);
         }
 
-        public async void DisableUser(BigInteger id)
+        public async Task DisableUser(BigInteger id)
         {
-            throw new NotImplementedException();
+            await this.serviceUser.DisableUser(id);
         }
 
-        public async void EnableUser(User user)
+        public async Task EnableUser(User user)
         {
-            throw new NotImplementedException();
+            await this.serviceUser.EnableUser(user);
         }
 
         public async Task<User> MakeLogin(DTOUserLogin userLogin)
         {
-            throw new NotImplementedException();
+            return await this.serviceUser.MakeLogin(userLogin);
         }
 
         public async Task<User> RecoveryAccess(User user)
         {
-            throw new NotImplementedException();
+            return await this.serviceUser.RecoveryAccess(user);
         }
     }
 }
