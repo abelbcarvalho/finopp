@@ -7,7 +7,7 @@ namespace ControllerFinOpp
 {
     public class FinOppController : IFinOppController
     {
-        public async void CreateFinOpp(FinOpp finOpp)
+        public async Task CreateFinOpp(FinOpp finOpp)
         {
             throw new NotImplementedException();
         }
@@ -42,12 +42,12 @@ namespace ControllerFinOpp
             throw new NotImplementedException();
         }
 
-        public async void FinishFinOpp(BigInteger id)
+        public async Task FinishFinOpp(BigInteger id)
         {
             throw new NotImplementedException();
         }
 
-        public async void UpdateFinOpp(FinOpp finOpp)
+        public async Task UpdateFinOpp(FinOpp finOpp)
         {
             throw new NotImplementedException();
         }
