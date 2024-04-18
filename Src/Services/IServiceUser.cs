@@ -2,14 +2,14 @@ using System.Numerics;
 using ModelUser;
 using UserLoginDTO;
 
-namespace IServiceUsers
+namespace IServiceUser
 {
     public interface IUserService
     {
-        abstract void CreateUser(User user);
+        abstract Task CreateUser(User user);
         abstract Task<User> MakeLogin(DTOUserLogin userLogin);
         abstract Task<User> RecoveryAccess(User user);
-        abstract void DisableUser(BigInteger id);
-        abstract void EnableUser(User user);
+        abstract Task DisableUser(BigInteger id);
+        abstract Task EnableUser(User user);
     }
 }

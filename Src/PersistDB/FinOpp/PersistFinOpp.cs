@@ -1,58 +1,55 @@
 using System.Numerics;
 using EnumFinType;
-using IControllerFinOpp;
+using IPersistFinOpp;
 using ModelFinOpp;
-using ServiceFinOpp;
 
-namespace ControllerFinOpp
+namespace PersistFinOpp
 {
-    public class FinOppController : IFinOppController
+    public class FinOppPersistDB : IFinOppPersistDB
     {
-        private readonly FinOppService finOppService = new();
-
         public async Task CreateFinOpp(FinOpp finOpp)
         {
-            await this.finOppService.CreateFinOpp(finOpp);
+            throw new NotImplementedException();
         }
 
         public async Task<List<FinOpp>> FindByCategory(string category, bool finish, BigInteger userId)
         {
-            return await this.finOppService.FindByCategory(category, finish, userId);
+            throw new NotImplementedException();
         }
 
         public async Task<List<FinOpp>> FindByDate(DateTime date, bool finish, BigInteger userId)
         {
-            return await this.finOppService.FindByDate(date, finish, userId);
+            throw new NotImplementedException();
         }
 
         public async Task<List<FinOpp>> FindByDateRange(DateTime firstDate, DateTime lastDate, bool finish, BigInteger userId)
         {
-            return await this.finOppService.FindByDateRange(firstDate, lastDate, finish, userId);
+            throw new NotImplementedException();
         }
 
         public async Task<List<FinOpp>> FindByFinType(FinTypeEnum finTypeEnum, bool finish, BigInteger userId)
         {
-            return await this.finOppService.FindByFinType(finTypeEnum, finish, userId);
+            throw new NotImplementedException();
         }
 
         public async Task<List<FinOpp>> FindByMoneyGreaterThanEquals(decimal money, bool finish, BigInteger userId)
         {
-            return await this.finOppService.FindByMoneyGreaterThanEquals(money, finish, userId);
+            throw new NotImplementedException();
         }
 
         public async Task<List<FinOpp>> FindByMoneyRange(decimal moneyFirst, decimal moneyLast, bool finish, BigInteger userId)
         {
-            return await this.finOppService.FindByMoneyRange(moneyFirst, moneyLast, finish, userId);
+            throw new NotImplementedException();
         }
 
         public async Task FinishFinOpp(BigInteger id)
         {
-            await this.finOppService.FinishFinOpp(id);
+            throw new NotImplementedException();
         }
 
         public async Task UpdateFinOpp(FinOpp finOpp)
         {
-            await this.finOppService.UpdateFinOpp(finOpp);
+            throw new NotImplementedException();
         }
     }
 }

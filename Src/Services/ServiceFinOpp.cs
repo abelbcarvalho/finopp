@@ -1,58 +1,58 @@
 using System.Numerics;
 using EnumFinType;
-using IControllerFinOpp;
+using IServiceFinOpp;
 using ModelFinOpp;
-using ServiceFinOpp;
+using PersistFinOpp;
 
-namespace ControllerFinOpp
+namespace ServiceFinOpp
 {
-    public class FinOppController : IFinOppController
+    public class FinOppService : IFinOppService
     {
-        private readonly FinOppService finOppService = new();
+        private readonly FinOppPersistDB finOppPersistDB = new();
 
         public async Task CreateFinOpp(FinOpp finOpp)
         {
-            await this.finOppService.CreateFinOpp(finOpp);
+            await this.finOppPersistDB.CreateFinOpp(finOpp);
         }
 
         public async Task<List<FinOpp>> FindByCategory(string category, bool finish, BigInteger userId)
         {
-            return await this.finOppService.FindByCategory(category, finish, userId);
+            return await this.finOppPersistDB.FindByCategory(category, finish, userId);
         }
 
         public async Task<List<FinOpp>> FindByDate(DateTime date, bool finish, BigInteger userId)
         {
-            return await this.finOppService.FindByDate(date, finish, userId);
+            return await this.finOppPersistDB.FindByDate(date, finish, userId);
         }
 
         public async Task<List<FinOpp>> FindByDateRange(DateTime firstDate, DateTime lastDate, bool finish, BigInteger userId)
         {
-            return await this.finOppService.FindByDateRange(firstDate, lastDate, finish, userId);
+            return await this.finOppPersistDB.FindByDateRange(firstDate, lastDate, finish, userId);
         }
 
         public async Task<List<FinOpp>> FindByFinType(FinTypeEnum finTypeEnum, bool finish, BigInteger userId)
         {
-            return await this.finOppService.FindByFinType(finTypeEnum, finish, userId);
+            return await this.finOppPersistDB.FindByFinType(finTypeEnum, finish, userId);
         }
 
         public async Task<List<FinOpp>> FindByMoneyGreaterThanEquals(decimal money, bool finish, BigInteger userId)
         {
-            return await this.finOppService.FindByMoneyGreaterThanEquals(money, finish, userId);
+            return await this.finOppPersistDB.FindByMoneyGreaterThanEquals(money, finish, userId);
         }
 
         public async Task<List<FinOpp>> FindByMoneyRange(decimal moneyFirst, decimal moneyLast, bool finish, BigInteger userId)
         {
-            return await this.finOppService.FindByMoneyRange(moneyFirst, moneyLast, finish, userId);
+            return await this.finOppPersistDB.FindByMoneyRange(moneyFirst, moneyLast, finish, userId);
         }
 
         public async Task FinishFinOpp(BigInteger id)
         {
-            await this.finOppService.FinishFinOpp(id);
+            await this.finOppPersistDB.FinishFinOpp(id);
         }
 
         public async Task UpdateFinOpp(FinOpp finOpp)
         {
-            await this.finOppService.UpdateFinOpp(finOpp);
+            await this.finOppPersistDB.UpdateFinOpp(finOpp);
         }
     }
 }
