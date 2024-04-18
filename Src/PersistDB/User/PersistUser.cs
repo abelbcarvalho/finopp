@@ -6,17 +6,17 @@ namespace PersistUser
 {
     public class UserPersistDB : IUserPersistDB
     {
-        public async void CreateUser(ModelUser.User user)
+        public async Task CreateUser(ModelUser.User user)
         {
             throw new NotImplementedException();
         }
 
-        public async void DisableUser(BigInteger id)
+        public async Task DisableUser(BigInteger id)
         {
             throw new NotImplementedException();
         }
 
-        public async void EnableUser(ModelUser.User user)
+        public async Task EnableUser(ModelUser.User user)
         {
             throw new NotImplementedException();
         }

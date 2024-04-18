@@ -1,35 +1,38 @@
 using System.Numerics;
 using IServiceUser;
 using ModelUser;
+using PersistUser;
 using UserLoginDTO;
 
 namespace ServiceUser
 {
     public class UserService : IUserService
     {
-        public async void CreateUser(User user)
+        private readonly UserPersistDB userPersistDB = new();
+
+        public async Task CreateUser(User user)
         {
-            throw new NotImplementedException();
+            await this.userPersistDB.CreateUser(user);
         }
 
-        public async void DisableUser(BigInteger id)
+        public async Task DisableUser(BigInteger id)
         {
-            throw new NotImplementedException();
+            await this.userPersistDB.DisableUser(id);
         }
 
-        public async void EnableUser(User user)
+        public async Task EnableUser(User user)
         {
-            throw new NotImplementedException();
+            await this.userPersistDB.EnableUser(user);
         }
 
         public async Task<User> MakeLogin(DTOUserLogin userLogin)
         {
-            throw new NotImplementedException();
+            return await this.userPersistDB.MakeLogin(userLogin);
         }
 
         public async Task<User> RecoveryAccess(User user)
         {
-            throw new NotImplementedException();
+            return await this.userPersistDB.RecoveryAccess(user);
         }
     }
 }
