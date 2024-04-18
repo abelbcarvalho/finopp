@@ -4,7 +4,7 @@ using UserLoginDTO;
 
 namespace IControllerUsers
 {
-    public interface IUsersController
+    public interface IUserController
     {
         abstract void CreateUser(User user);
         abstract Task<User> MakeLogin(DTOUserLogin userLogin);
